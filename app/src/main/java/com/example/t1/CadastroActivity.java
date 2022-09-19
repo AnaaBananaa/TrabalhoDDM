@@ -10,8 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.t1.apresentador.CadastroActivityApresentador;
+import com.example.t1.viewInterface.VisaoCadastro;
 
-public class CadastroActivity extends AppCompatActivity implements Visao{
+public class CadastroActivity extends AppCompatActivity implements VisaoCadastro {
 
     private CadastroActivityApresentador apresentador = new CadastroActivityApresentador(this);
 

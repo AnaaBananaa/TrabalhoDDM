@@ -1,5 +1,6 @@
 package com.example.t1.adaptador;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.t1.R;
+import com.example.t1.modelo.Receita;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
+
 public class AdaptadorRecyclerView extends RecyclerView.Adapter<AdaptadorRecyclerView.ViewHolder> {
+
+    private List<Receita> receitas;
+    private Context context;
+
+    public AdaptadorRecyclerView(List<Receita> receitas, Context context){
+        this.receitas = receitas;
+        this.context = context;
+    }
 
     @NonNull
     @Override
@@ -26,12 +38,12 @@ public class AdaptadorRecyclerView extends RecyclerView.Adapter<AdaptadorRecycle
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.imageView.setImageResource(R.drawable.sakura);
-        holder.texto.setText("Receita "+ position);
+        holder.texto.setText(receitas.get(position).getTitulo());
     }
 
     @Override
     public int getItemCount() {
-        return 20;
+        return receitas.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -41,7 +53,6 @@ public class AdaptadorRecyclerView extends RecyclerView.Adapter<AdaptadorRecycle
             super(itemView);
             imageView = itemView.findViewById(R.id.imageReceita);
             texto = itemView.findViewById(R.id.tituloReclycerView);
-
             imageView.setOnClickListener(e -> Toast.makeText(itemView.getContext(), "Wild", Toast.LENGTH_SHORT).show());
         }
     }

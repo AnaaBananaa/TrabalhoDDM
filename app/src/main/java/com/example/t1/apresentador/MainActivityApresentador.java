@@ -2,21 +2,21 @@ package com.example.t1.apresentador;
 
 import com.example.t1.CadastroActivity;
 import com.example.t1.HomeActivity;
-import com.example.t1.SingletonUser;
-import com.example.t1.Visao;
+import com.example.t1.MainActivity;
+import com.example.t1.ManterUsuario;
 import com.example.t1.modelo.Usuario;
 
 public class MainActivityApresentador {
 
-    private Visao view;
+    private MainActivity view;
     private Usuario usuario;
 
-    public MainActivityApresentador(Visao view) {
+    public MainActivityApresentador(MainActivity view) {
         this.view = view;
     }
 
     public void onVerifyUser(String email, String senha){
-        usuario = SingletonUser.getInstance().getUsuarios().get(email);
+        usuario = ManterUsuario.getInstance().getUsuarios().get(email);
         if((usuario != null) && (usuario.getSenha().equals(senha))) {
             view.onShowToast("Login efetuado com sucesso!");
             view.onNavToActivity(HomeActivity.class);

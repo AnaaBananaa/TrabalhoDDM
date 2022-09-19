@@ -10,8 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.t1.apresentador.MainActivityApresentador;
+import com.example.t1.viewInterface.VisaoCadastro;
+import com.example.t1.viewInterface.VisaoMain;
 
-public class MainActivity extends AppCompatActivity  implements Visao{
+public class MainActivity extends AppCompatActivity  implements VisaoMain {
 
     private MainActivityApresentador apresentador = new MainActivityApresentador(this);
     @Override

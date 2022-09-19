@@ -5,15 +5,19 @@ import com.example.t1.modelo.Usuario;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SingletonUser {
-    private static SingletonUser instance;
+public class ManterUsuario {
+    private static ManterUsuario instance = new ManterUsuario();
     private Map<String, Usuario> usuarios = new HashMap<>();
 
-    public static SingletonUser getInstance() {
+    public static ManterUsuario getInstance() {
         if (instance == null) {
-            instance = new SingletonUser();
+            instance = new ManterUsuario();
         }
         return instance;
+    }
+
+    public void insertUsuario(String nome, String senha, String email){
+        ManterUsuario.getInstance().getUsuarios().put(email, new Usuario(nome, senha, email));
     }
 
     public Map<String, Usuario> getUsuarios() {
