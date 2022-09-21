@@ -3,7 +3,7 @@ package com.example.t1.apresentador;
 import com.example.t1.CadastroActivity;
 import com.example.t1.HomeActivity;
 import com.example.t1.MainActivity;
-import com.example.t1.ManterUsuario;
+import com.example.t1.DAO.ManterUsuario;
 import com.example.t1.modelo.Usuario;
 
 public class MainActivityApresentador {

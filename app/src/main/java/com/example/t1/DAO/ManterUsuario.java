@@ -1,8 +1,11 @@
-package com.example.t1;
+package com.example.t1.DAO;
 
+import com.example.t1.modelo.Receita;
 import com.example.t1.modelo.Usuario;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ManterUsuario {
