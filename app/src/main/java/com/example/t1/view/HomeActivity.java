@@ -1,4 +1,4 @@
-package com.example.t1;
+package com.example.t1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,17 +11,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.t1.DAO.ManterReceita;
+import com.example.t1.R;
 import com.example.t1.adaptador.AdaptadorRecyclerView;
 import com.example.t1.apresentador.HomeActivityApresentador;
+import com.example.t1.contrato.ContratoHome;
 import com.example.t1.modelo.Receita;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ContratoHome.ContratoHomeView {
 
-    private HomeActivityApresentador apresentador = new HomeActivityApresentador(this);
+    private ContratoHome.ContratoHomePresenter apresentador = new HomeActivityApresentador(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,5 +45,11 @@ public class HomeActivity extends AppCompatActivity {
                 recyclerView.setAdapter((new AdaptadorRecyclerView(apresentador.buscaReceitas(editTextBusca.getText().toString()), view.getContext())));
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        apresentador.destroyView();
     }
 }

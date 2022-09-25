@@ -1,4 +1,4 @@
-package com.example.t1;
+package com.example.t1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,12 +9,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.t1.R;
 import com.example.t1.apresentador.CadastroActivityApresentador;
-import com.example.t1.viewInterface.VisaoCadastro;
+import com.example.t1.contrato.ContratoCadastro;
 
-public class CadastroActivity extends AppCompatActivity implements VisaoCadastro {
+public class CadastroActivity extends AppCompatActivity implements ContratoCadastro.ContratoCadastroView {
 
-    private CadastroActivityApresentador apresentador = new CadastroActivityApresentador(this);
+    private ContratoCadastro.ContratoCadastroPresenter apresentador = new CadastroActivityApresentador(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,5 +41,11 @@ public class CadastroActivity extends AppCompatActivity implements VisaoCadastro
     @Override
     public void onShowToast(String mesage) {
         Toast.makeText(this, mesage, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        apresentador.destroyView();
     }
 }

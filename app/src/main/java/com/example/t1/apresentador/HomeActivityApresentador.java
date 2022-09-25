@@ -1,21 +1,32 @@
 package com.example.t1.apresentador;
 
 import com.example.t1.DAO.ManterReceita;
-import com.example.t1.HomeActivity;
-import com.example.t1.DAO.ManterUsuario;
+import com.example.t1.contrato.ContratoHome;
+import com.example.t1.view.HomeActivity;
 import com.example.t1.modelo.Receita;
 
 import java.util.List;
 
-public class HomeActivityApresentador {
+public class HomeActivityApresentador implements ContratoHome.ContratoHomePresenter {
 
-    private HomeActivity homeActivity;
+    private ContratoHome.ContratoHomeView view;
 
-    public HomeActivityApresentador(HomeActivity homeActivity){
-        this.homeActivity = homeActivity;
+    public HomeActivityApresentador(ContratoHome.ContratoHomeView view){
+        setView(view);
     }
 
+    @Override
     public List<Receita> buscaReceitas(String tituloBusca){
         return ManterReceita.getInstance().buscaReceitaPorTitulo(tituloBusca);
+    }
+
+    @Override
+    public void setView(ContratoHome.ContratoHomeView view) {
+        this.view = view;
+    }
+
+    @Override
+    public void destroyView() {
+        view = null;
     }
 }

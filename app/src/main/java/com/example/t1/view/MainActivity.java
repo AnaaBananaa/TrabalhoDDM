@@ -1,4 +1,4 @@
-package com.example.t1;
+package com.example.t1.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,13 +9,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.t1.R;
 import com.example.t1.apresentador.MainActivityApresentador;
-import com.example.t1.viewInterface.VisaoCadastro;
-import com.example.t1.viewInterface.VisaoMain;
+import com.example.t1.contrato.ContratoMain;
 
-public class MainActivity extends AppCompatActivity  implements VisaoMain {
+public class MainActivity extends AppCompatActivity  implements ContratoMain.ContratoMainView {
 
-    private MainActivityApresentador apresentador = new MainActivityApresentador(this);
+    private ContratoMain.ContratoMainPresenter apresentador = new MainActivityApresentador(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,5 +37,11 @@ public class MainActivity extends AppCompatActivity  implements VisaoMain {
     @Override
     public void onShowToast(String mesage) {
         Toast.makeText(this, mesage, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        apresentador.destroyView();
     }
 }
