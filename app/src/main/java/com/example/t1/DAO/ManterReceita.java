@@ -4,6 +4,7 @@ import com.example.t1.modelo.Receita;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ManterReceita {
     private static ManterReceita instance;
@@ -25,9 +26,11 @@ public class ManterReceita {
     }
 
     public List<Receita> buscaReceitaPorTitulo(String titulo){
+        String busca = titulo.toLowerCase(Locale.ROOT);
         List<Receita> rAux = new ArrayList<>();
         for(Receita r : receitas){
-            if(r.getTitulo().contains(titulo)){
+            String rTitulo = r.getTitulo().toLowerCase(Locale.ROOT);
+            if(rTitulo.contains(busca)){
                 rAux.add(r);
             }
         }

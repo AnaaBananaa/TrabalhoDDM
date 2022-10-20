@@ -2,16 +2,15 @@ package com.example.t1.apresentador;
 
 import com.example.t1.DAO.ManterReceita;
 import com.example.t1.contrato.ContratoHome;
-import com.example.t1.view.HomeActivity;
 import com.example.t1.modelo.Receita;
 
 import java.util.List;
 
-public class HomeActivityApresentador implements ContratoHome.ContratoHomePresenter {
+public class HomeFragmentApresentador implements ContratoHome.ContratoHomePresenter {
 
     private ContratoHome.ContratoHomeView view;
 
-    public HomeActivityApresentador(ContratoHome.ContratoHomeView view){
+    public HomeFragmentApresentador(ContratoHome.ContratoHomeView view){
         setView(view);
     }
 

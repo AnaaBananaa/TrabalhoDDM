@@ -20,6 +20,29 @@
         <entry key="..\:/Users/Aners/AndroidStudioProjects/T1/app/src/main/res/layout/layout_favoritos.xml" value="0.19270833333333334" />
         <entry key="..\:/Users/Aners/AndroidStudioProjects/T1/app/src/main/res/layout/layout_list.xml" value="0.264" />
         <entry key="..\:/Users/Aners/AndroidStudioProjects/T1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19375" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/shape_bottom_nav_menu.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/shape_text_view.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_app.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_cadastro.xml" value="0.25" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_home.xml" value="0.14" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_login.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_login.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_sing_up.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/layout_list.xml" value="0.33" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/layout_recipe_recycler_view.xml" value="0.25" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14140625" />
       </map>
     </option>
   </component>

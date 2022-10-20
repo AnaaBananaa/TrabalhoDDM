@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingVertical="@dimen/activity_vertical_margin"
+    android:paddingHorizontal="@dimen/activity_horizontal_margin"
+    android:background="@color/white"
+    tools:context=".view.fragment.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/home_line_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/home_ed_search"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/shape_text_view"
+                android:hint="@string/search_hint"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:paddingEnd="60dp"
+                android:textSize="14sp"
+                />
+
+            <ImageButton
+                android:id="@+id/home_btn_search"
+                android:layout_width="58dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="-60dp"
+                android:src="@drawable/ic_baseline_search_24"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_line_search_layout">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

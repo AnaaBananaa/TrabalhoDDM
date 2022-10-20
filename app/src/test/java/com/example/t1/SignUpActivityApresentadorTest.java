@@ -1,8 +1,8 @@
 package com.example.t1;
 
 import com.example.t1.DAO.ManterUsuario;
-import com.example.t1.apresentador.CadastroActivityApresentador;
-import com.example.t1.contrato.ContratoCadastro;
+import com.example.t1.apresentador.SignUpActivityApresentador;
+import com.example.t1.contrato.ContratoSignUp;
 import com.example.t1.modelo.Usuario;
 
 import static org.junit.Assert.*;
@@ -11,8 +11,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CadastroActivityApresentadorTest {
-    private ContratoCadastro.ContratoCadastroPresenter apresentador;
+public class SignUpActivityApresentadorTest {
+    private ContratoSignUp.ContratoSignUpPresenter apresentador;
     private ViewTest view;
     private static ManterUsuario manterUsuario;
 
@@ -24,7 +24,7 @@ public class CadastroActivityApresentadorTest {
     @Before
     public void inicializacaoTeste() {
         view = new ViewTest();
-        apresentador = new CadastroActivityApresentador(view);
+        apresentador = new SignUpActivityApresentador(view);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class CadastroActivityApresentadorTest {
         String retornoMensagemEsperado = "Usuário cadastrado com sucesso";
         String retornoMensagemObtido = view.getMensage();
         Boolean retornoActionEsperado = true;
-        Boolean retrnoActionRecebido = view.getRealizouAcaoNav();
+        Boolean retrnoActionRecebido = view.getRealizouNavSignIn();
         assertEquals(retornoUsuarioEsperado,retornoUsuarioObtido);
         assertEquals(retornoMensagemEsperado, retornoMensagemObtido);
         assertEquals(retornoActionEsperado, retrnoActionRecebido);
@@ -55,23 +55,18 @@ public class CadastroActivityApresentadorTest {
         String retornoMensagemEsperado = "Usuário já cadastrado no sistema";
         String retornoMensagemObtido = view.getMensage();
         Boolean retornoActionEsperado = false;
-        Boolean retrnoActionRecebido = view.getRealizouAcaoNav();
+        Boolean retrnoActionRecebido = view.getRealizouNavSignIn();
         assertEquals(retornoMensagemEsperado, retornoMensagemObtido);
         assertEquals(retornoActionEsperado, retrnoActionRecebido);
     }
 
-    static class ViewTest implements ContratoCadastro.ContratoCadastroView {
+    static class ViewTest implements ContratoSignUp.ContratoSignUpView {
         private String mensage;
-        private boolean realizouAcaoNav;
+        private boolean realizouNavSignIn;
 
         public ViewTest() {
             mensage = "";
-            realizouAcaoNav = false;
-        }
-
-        @Override
-        public void onNavToActivity(Class classe) {
-            realizouAcaoNav = true;
+            realizouNavSignIn = false;
         }
 
         @Override
@@ -79,12 +74,17 @@ public class CadastroActivityApresentadorTest {
             this.mensage = mensage;
         }
 
+        @Override
+        public void onNavToSignIn() {
+            realizouNavSignIn = true;
+        }
+
         public String getMensage() {
             return mensage;
         }
 
-        public boolean getRealizouAcaoNav() {
-            return realizouAcaoNav;
+        public boolean getRealizouNavSignIn() {
+            return realizouNavSignIn;
         }
     }
 }

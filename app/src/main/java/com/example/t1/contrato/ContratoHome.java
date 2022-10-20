@@ -10,7 +10,7 @@ public interface ContratoHome {
     }
     interface ContratoHomePresenter {
         List<Receita> buscaReceitas(String tituloBusca);
-        void setView(ContratoHome.ContratoHomeView view);
+        void setView(ContratoHomeView view);
         void destroyView();
     }
 }

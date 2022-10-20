@@ -3,18 +3,16 @@ package com.example.t1;
 import static org.junit.Assert.assertEquals;
 
 import com.example.t1.DAO.ManterUsuario;
-import com.example.t1.apresentador.CadastroActivityApresentador;
-import com.example.t1.apresentador.MainActivityApresentador;
-import com.example.t1.contrato.ContratoCadastro;
-import com.example.t1.contrato.ContratoMain;
+import com.example.t1.apresentador.SignInActivityApresentador;
+import com.example.t1.contrato.ContratoSignIn;
 import com.example.t1.modelo.Usuario;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MainActivityApresentadorTest {
-    private ContratoMain.ContratoMainPresenter apresentador;
+public class SignInActivityApresentadorTest {
+    private ContratoSignIn.ContratoSignInPresenter apresentador;
     private ViewTest view;
     private static ManterUsuario manterUsuario;
 
@@ -26,7 +24,7 @@ public class MainActivityApresentadorTest {
     @Before
     public void inicializacaoTeste() {
         view = new ViewTest();
-        apresentador = new MainActivityApresentador(view);
+        apresentador = new SignInActivityApresentador(view);
     }
 
     @Test
@@ -39,7 +37,7 @@ public class MainActivityApresentadorTest {
         String retornoMensagemEsperado = "Login e/ou senha inválidos!";
         String retornoMensagemObtido = view.getMensage();
         Boolean retornoActionEsperado = false;
-        Boolean retrnoActionRecebido = view.getRealizouAcaoNav();
+        Boolean retrnoActionRecebido = view.getRealizouNavToApp();
         assertEquals(retornoMensagemEsperado, retornoMensagemObtido);
         assertEquals(retornoActionEsperado, retrnoActionRecebido);
     }
@@ -56,7 +54,7 @@ public class MainActivityApresentadorTest {
         String retornoMensagemEsperado = "Login efetuado com sucesso!";
         String retornoMensagemObtido = view.getMensage();
         Boolean retornoActionEsperado = true;
-        Boolean retrnoActionRecebido = view.getRealizouAcaoNav();
+        Boolean retrnoActionRecebido = view.getRealizouNavToApp();
         assertEquals(retornoMensagemEsperado, retornoMensagemObtido);
         assertEquals(retornoActionEsperado, retrnoActionRecebido);
     }
@@ -73,23 +71,20 @@ public class MainActivityApresentadorTest {
         String retornoMensagemEsperado = "Login e/ou senha inválidos!";
         String retornoMensagemObtido = view.getMensage();
         Boolean retornoActionEsperado = false;
-        Boolean retrnoActionRecebido = view.getRealizouAcaoNav();
+        Boolean retrnoActionRecebido = view.getRealizouNavToApp();
         assertEquals(retornoMensagemEsperado, retornoMensagemObtido);
         assertEquals(retornoActionEsperado, retrnoActionRecebido);
     }
 
-    static class ViewTest implements ContratoMain.ContratoMainView {
+    static class ViewTest implements ContratoSignIn.ContratoSignInView {
         private String mensage;
-        private boolean realizouAcaoNav;
+        private boolean realizouNavToSignUp;
+        private boolean isRealizouNavToApp;
 
         public ViewTest() {
             mensage = "";
-            realizouAcaoNav = false;
-        }
-
-        @Override
-        public void onNavToActivity(Class classe) {
-            realizouAcaoNav = true;
+            realizouNavToSignUp = false;
+            isRealizouNavToApp = false;
         }
 
         @Override
@@ -97,12 +92,26 @@ public class MainActivityApresentadorTest {
             this.mensage = mensage;
         }
 
+        @Override
+        public void onNavToSignUp() {
+            realizouNavToSignUp = true;
+        }
+
+        @Override
+        public void onNavToApp() {
+            isRealizouNavToApp = true;
+        }
+
         public String getMensage() {
             return mensage;
         }
 
-        public boolean getRealizouAcaoNav() {
-            return realizouAcaoNav;
+        public boolean getRealizouNavToSignUp() {
+            return realizouNavToSignUp;
+        }
+
+        public boolean getRealizouNavToApp() {
+            return isRealizouNavToApp;
         }
     }
 }

@@ -1,16 +1,14 @@
 package com.example.t1.apresentador;
 
-import com.example.t1.contrato.ContratoCadastro;
-import com.example.t1.view.CadastroActivity;
-import com.example.t1.view.MainActivity;
+import com.example.t1.contrato.ContratoSignUp;
 import com.example.t1.DAO.ManterUsuario;
 import com.example.t1.modelo.Usuario;
 
-public class CadastroActivityApresentador implements ContratoCadastro.ContratoCadastroPresenter {
+public class SignUpActivityApresentador implements ContratoSignUp.ContratoSignUpPresenter {
 
-    private ContratoCadastro.ContratoCadastroView view;
+    private ContratoSignUp.ContratoSignUpView view;
 
-    public CadastroActivityApresentador(ContratoCadastro.ContratoCadastroView view) {
+    public SignUpActivityApresentador(ContratoSignUp.ContratoSignUpView view) {
         setView(view);
     }
 
@@ -20,19 +18,14 @@ public class CadastroActivityApresentador implements ContratoCadastro.ContratoCa
         if(user == null){
             ManterUsuario.getInstance().insertUsuario(nome,senha, email);
             view.onShowToast("Usuário cadastrado com sucesso");
-            view.onNavToActivity(MainActivity.class);
+            view.onNavToSignIn();
         }else{
             view.onShowToast("Usuário já cadastrado no sistema");
         }
     }
 
     @Override
-    public void onNavToLogin(){
-        view.onNavToActivity(MainActivity.class);
-    }
-
-    @Override
-    public void setView(ContratoCadastro.ContratoCadastroView view) {
+    public void setView(ContratoSignUp.ContratoSignUpView view) {
         this.view = view;
     }
 

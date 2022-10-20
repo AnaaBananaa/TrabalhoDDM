@@ -3,9 +3,19 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_home2">HomeActivity2</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="button_open_recipe_description">Botão para abrir a receita</string>
+    <string name="create_account">CADASTRAR</string>
+    <string name="email">E-mail</string>
+    <string name="enter">ENTRAR</string>
+    <string name="have_account">Já possui uma Conta?</string>
+    <string name="havent_account">Não possui uma Conta?</string>
+    <string name="recipe_image_description">Imagem da receita</string>
+    <string name="name">Nome</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_settings">Configurações</string>
+    <string name="password">Senha</string>
+    <string name="search_hint">Digite o nome de uma receita…</string>
+    <string name="sign_up">Cadastre-se</string>
+    <string name="sign_in">Faça o login</string>
 </resources>
