@@ -1,10 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".view.fragment.SettingsFragment">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ddm.veggie.view.components.VeggieConfigButton
+            android:id="@+id/settings_vb_change_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/normal_white_button"
+            android:elevation="0dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:stateListAnimator="@null"
+            android:text="@string/btn_change_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="-36dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@+id/settings_vb_change_name"
+            app:layout_constraintTop_toTopOf="@+id/settings_vb_change_name"
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        <com.ddm.veggie.view.components.VeggieConfigButton
+            android:id="@+id/settings_vb_delete_account"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/normal_white_button"
+            android:elevation="0dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:stateListAnimator="@null"
+            android:text="@string/btn_delete_account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settings_vb_change_name" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="-36dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@+id/settings_vb_delete_account"
+            app:layout_constraintTop_toTopOf="@+id/settings_vb_delete_account"
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+        <com.ddm.veggie.view.components.VeggieConfigButton
+            android:id="@+id/settings_vb_sign_out"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/normal_white_button"
+            android:elevation="0dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:stateListAnimator="@null"
+            android:text="@string/btn_sign_out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settings_vb_delete_account" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="-36dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@+id/settings_vb_sign_out"
+            app:layout_constraintTop_toTopOf="@+id/settings_vb_sign_out"
+            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

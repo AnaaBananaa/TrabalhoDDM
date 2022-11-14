@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.T1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Veggie" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/theme_purple_300</item>
         <item name="colorPrimaryVariant">@color/theme_purple_500</item>
@@ -11,8 +11,32 @@
         <item name="colorOnSecondary">@color/white</item>
         <!-- Customize your theme here. -->
 
-        <!-- Barra de status transparente. -->
-        <item name="android:windowTranslucentStatus">true</item>
+        <!-- Barra de navegação transparente. -->
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!-- Font family -->
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:includeFontPadding">false</item>
+        <!-- Cor do texto. -->
+        <item name="android:textColor">@android:color/black</item>
+        <!-- Cor do textHint. -->
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <!-- Cor do texto do input. -->
+        <item name="android:editTextColor">@android:color/black</item>
+
+    </style>
+
+    <!-- With Action Bar. -->
+    <style name="Theme.Veggie.ActionBar" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/theme_purple_300</item>
+        <item name="colorPrimaryVariant">@color/theme_purple_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/theme_purple_300</item>
+        <item name="colorSecondaryVariant">@color/theme_purple_500</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Customize your theme here. -->
+
         <!-- Barra de navegação transparente. -->
         <item name="android:windowTranslucentNavigation">true</item>
         <!-- Cor do texto. -->

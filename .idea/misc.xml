@@ -23,26 +23,56 @@
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1965" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1965" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_baseline_sentiment_very_dissatisfied_24.xml" value="0.206" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1965" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1965" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1965" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1965" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/normal_button.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/normal_purple_button.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/outline_button.xml" value="0.206" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/shape_bottom_nav_menu.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/shape_image_view.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/shape_round_buttom.xml" value="0.1235" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/shape_spinner.xml" value="0.206" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/shape_text_view.xml" value="0.1965" />
-        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_app.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/veggie_button.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/veggie_config_button.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/veggie_edit_text.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/veggie_edit_text_normal.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/veggie_edit_text_wrong.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/veggie_text_view.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/veggie_text_view_normal.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/drawable/veggie_text_view_wrong.xml" value="0.206" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout-v31/activity_recipe.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_app.xml" value="0.22" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_cadastro.xml" value="0.25" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_change_name.xml" value="0.1" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_delete_account.xml" value="0.33" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_home.xml" value="0.14" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_login.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
-        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
-        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_recipe.xml" value="0.5" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_sign_in.xml" value="0.6281859070464768" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/dialog_filter.xml" value="0.5" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/dialog_loading.xml" value="0.33" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_favorites_recipes_with_content.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_favorites_recipes_without_content.xml" value="0.15" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_filter_dialog.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_home.xml" value="0.25280898876404495" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_login.xml" value="0.18854166666666666" />
-        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_recipe.xml" value="0.2401263823064771" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_recipes.xml" value="0.1" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_settings.xml" value="0.3189585028478438" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/fragment_sing_up.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/layout_list.xml" value="0.33" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/layout_recipe_recycler_view.xml" value="0.25" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/layout/recycler_view_recipe.xml" value="0.33" />
         <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14140625" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/menu/change_name_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Mateus/Documents/Faculdade/6Semestre/DesenvolvimentoMobile/TrabalhoDDM/app/src/main/res/menu/filter_dialog_menu.xml" value="0.153125" />
       </map>
     </option>
   </component>

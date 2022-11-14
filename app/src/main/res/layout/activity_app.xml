@@ -7,11 +7,14 @@
     android:background="@color/white"
     tools:context=".view.activity.AppActivity">
 
+
     <FrameLayout
         android:id="@+id/app_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:paddingTop="@dimen/activity_top_padding"
+        android:paddingHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_above="@id/app_bottom_nav">
 
     </FrameLayout>
 
@@ -22,9 +25,10 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/shape_bottom_nav_menu"
         android:elevation="@dimen/cardview_default_elevation"
-        app:itemRippleColor="@color/white"
         app:itemIconTint="@color/icons_bottom_nav_menu_color"
+        app:itemRippleColor="@color/white"
         app:itemTextColor="@color/title_bottom_nav_menu_color"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>

@@ -1,21 +1,65 @@
 <resources>
-    <string name="app_name">T1</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_home2">HomeActivity2</string>
+    <string name="app_name">Veggie</string>
+
+    <!-- BUTTONS -->
+    <!--  name   -->
+    <string name="btn_change_name">Alterar nome</string>
+    <string name="btn_create_account">Cadastrar</string>
+    <string name="btn_delete_account">Excluir sua conta</string>
+    <string name="btn_enter">Entrar</string>
+    <string name="btn_sign_out">Sair</string>
+    <string name="btn_save">Salvar</string>
+    <string name="btn_delete">Deletar</string>
+
+    <!-- TEXTVIEW -->
+    <!--  name   -->
+    <string name="txt_hello">Olá,</string>
+    <string name="txt_favorites_recipes">Receitas favoritas</string>
+    <string name="txt_favorites_recipes_whitout_content">Sem receitas favoritadas</string>
+    <string name="txt_filter">Filtrar</string>
+    <string name="txt_filter_dialog_order_by">Ordenar por:</string>
+    <string name="txt_really_want_delete_account">Você realmente gostaria de deletar sua conta? Essa é uma ação irreversível!</string>
+    <string name="txt_home_intro_text">Seja bem-vindo ao Veggie! Aqui você encontrará receitas veganas incríveis!</string>
+    <string name="txt_recipe_description">Descrição</string>
+
+
+    <!-- MENU -->
+    <!-- name -->
+    <string name="menu_home">Home</string>
+    <string name="menu_recipe">Receitas</string>
+    <string name="menu_filter">Filtrar</string>
+    <string name="menu_settings">Configurações</string>
+    <string name="menu_change_name">Alterar Nome</string>
+    <string name="menu_delete_account">Excluir Sua Conta</string>
+
+    <!-- DESCRIPTION -->
+    <string name="description_favorite_recipes_without_content_logo">Logo sem receitas encontradas</string>
+    <string name="description_favorite_recipes_without_content_text">Texto sem receitas encontradas</string>
+    <string name="description_sign_up_logo">Logo da tela de login</string>
+    <string name="description_splash_logo">Logo da splash</string>
+    <string name="description_delete_account_logo">Logo da tela de excluir conta</string>
+    <string name="description_favorite_icon">Icone de favoritado</string>
+
+    <!-- HINT -->
+    <string name="hint_change_name">Novo nome</string>
+
+    <!-- ALERT -->
+    <string name="alert_email_already_in_use">E-mail em uso por outra conta</string>
+    <string name="alert_empty_email">O campo de e-mail deve ser preenchido</string>
+    <string name="alert_empty_name">O campo de nome deve ser preenchido</string>
+    <string name="alert_empty_password">O campo de senha deve ser preenchido</string>
+    <string name="alert_wrong_email_and_or_password">E-mail e/ou senha incorretos</string>
 
     <string name="button_open_recipe_description">Botão para abrir a receita</string>
-    <string name="create_account">CADASTRAR</string>
+    <string name="button_search_description">Botão para buscar</string>
     <string name="email">E-mail</string>
-    <string name="enter">ENTRAR</string>
     <string name="have_account">Já possui uma Conta?</string>
     <string name="havent_account">Não possui uma Conta?</string>
     <string name="recipe_image_description">Imagem da receita</string>
     <string name="name">Nome</string>
-    <string name="menu_home">Home</string>
-    <string name="menu_settings">Configurações</string>
     <string name="password">Senha</string>
     <string name="search_hint">Digite o nome de uma receita…</string>
     <string name="sign_up">Cadastre-se</string>
     <string name="sign_in">Faça o login</string>
+
 </resources>

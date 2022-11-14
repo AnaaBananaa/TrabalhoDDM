@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
@@ -9,86 +9,121 @@
     android:gravity="center"
     android:paddingHorizontal="@dimen/activity_horizontal_margin"
     android:paddingVertical="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context=".view.activity.SignUpActivity">
 
-    <EditText
-        android:id="@+id/sign_up_ed_name"
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/description_sign_up_logo"
+        app:srcCompat="@drawable/logo" />
+
+    <com.ddm.veggie.view.components.VeggieEditText
+        android:id="@+id/sign_up_vet_name"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/shape_text_view"
+        android:layout_marginBottom="2dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:hint="@string/name"
+        android:includeFontPadding="false"
         android:inputType="textPersonName"
+        android:imeOptions="actionNext"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_ed_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:paddingEnd="10dp" />
 
-    <EditText
-        android:id="@+id/sign_up_ed_email"
+    <TextView
+        android:id="@+id/sign_up_tv_name_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins"
+        android:includeFontPadding="false"
+        android:text=""
+        android:textColor="@color/theme_red_wrong"
+        android:textSize="12sp" />
+
+    <com.ddm.veggie.view.components.VeggieEditText
+        android:id="@+id/sign_up_vet_email"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/shape_text_view"
+        android:layout_marginBottom="2dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:hint="@string/email"
+        android:includeFontPadding="false"
         android:inputType="textEmailAddress"
+        android:imeOptions="actionNext"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_ed_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:paddingEnd="10dp" />
 
-    <EditText
-        android:id="@+id/sign_up_ed_password"
+    <TextView
+        android:id="@+id/sign_up_tv_email_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins"
+        android:includeFontPadding="false"
+        android:text=""
+        android:textColor="@color/theme_red_wrong"
+        android:textSize="12sp" />
+
+    <com.ddm.veggie.view.components.VeggieEditText
+        android:id="@+id/sign_up_vet_password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/shape_text_view"
+        android:layout_marginBottom="2dp"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:hint="@string/password"
+        android:includeFontPadding="false"
         android:inputType="textPassword"
+        android:imeOptions="actionDone"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_btn_create_account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:paddingEnd="10dp" />
 
-    <Button
+    <TextView
+        android:id="@+id/sign_up_tv_password_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins"
+        android:includeFontPadding="false"
+        android:text=""
+        android:textColor="@color/theme_red_wrong"
+        android:textSize="12sp" />
+
+    <com.ddm.veggie.view.components.VeggieButton
         android:id="@+id/sign_up_btn_create_account"
         android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="5dp"
-        android:text="@string/create_account"
-        app:layout_constraintBottom_toTopOf="@+id/sign_up_line_sign_in_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="@string/btn_create_account" />
 
     <LinearLayout
-        android:id="@+id/sign_up_line_sign_in_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-        <TextView
-            android:id="@+id/sign_up_txt_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/have_account"/>
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/sign_up_txt_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:includeFontPadding="false"
+            android:text="@string/have_account" />
+
+        <TextView
+            android:id="@+id/sign_up_tv_sign_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
+            android:fontFamily="@font/poppins"
+            android:includeFontPadding="false"
             android:text="@string/sign_in"
-            android:textColor="@color/theme_purple_500"/>
+            android:textColor="@color/theme_purple_500" />
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
