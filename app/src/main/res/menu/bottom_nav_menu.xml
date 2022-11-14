@@ -6,6 +6,10 @@
         android:title="@string/menu_home"
         android:icon="@drawable/ic_baseline_home_24"/>
     <item
+        android:id="@+id/recipe"
+        android:title="@string/menu_recipe"
+        android:icon="@drawable/ic_baseline_restaurant_24"/>
+    <item
         android:id="@+id/settings"
         android:title="@string/menu_settings"
         android:icon="@drawable/ic_baseline_settings_24"/>
