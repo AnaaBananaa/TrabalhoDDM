@@ -1,112 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/recipe_rv_main_layout"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recycler_view_card_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_marginHorizontal="3dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="12dp"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardCornerRadius="15dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/recipe_rv_card_view"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="3dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="12dp"
-        card_view:cardBackgroundColor="@color/white"
-        card_view:cardCornerRadius="15dp">
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/recipe_rv_lines"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/recycler_view_tv_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text=""
+            android:textSize="18sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/recycler_view_frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent">
+
+                <ProgressBar
+                    android:id="@+id/recycler_view_pb_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    android:id="@+id/recycler_view_iv_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/recipe_image_description"
+                    android:scaleType="centerCrop" />
+            </FrameLayout>
 
             <TextView
-                android:id="@+id/recipe_rv_txt_title"
+                android:id="@+id/recycler_view_tv_favorite_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
-                android:fontFamily="@font/comfortaa_bold"
+                android:fontFamily="@font/poppins"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text=""
-                android:textSize="18sp" />
+                android:textSize="14sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/recycler_view_frame_layout" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end">
+            <ImageView
+                android:id="@+id/recycler_view_iv_star"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/description_favorite_icon"
+                android:elevation="1dp"
+                android:src="@drawable/ic_baseline_white_star_outline_24"
+                card_view:layout_constraintBottom_toBottomOf="@+id/recycler_view_ib_favorite"
+                card_view:layout_constraintEnd_toEndOf="@+id/recycler_view_ib_favorite"
+                card_view:layout_constraintStart_toStartOf="@+id/recycler_view_ib_favorite" />
 
-                <FrameLayout
-                    android:id="@+id/rv_frame"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    card_view:layout_constraintEnd_toEndOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintTop_toTopOf="parent">
-
-                    <ProgressBar
-                        android:id="@+id/recipe_rv_progress_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center" />
-
-                    <ImageView
-                        android:id="@+id/recipe_rv_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@string/recipe_image_description"
-                        android:scaleType="centerCrop" />
-                </FrameLayout>
-
-                <TextView
-                    android:id="@+id/rv_txt_favorite_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="10dp"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="center"
-                    android:includeFontPadding="false"
-                    android:text=""
-                    android:textSize="14sp"
-                    card_view:layout_constraintBottom_toBottomOf="parent"
-                    card_view:layout_constraintStart_toStartOf="parent"
-                    card_view:layout_constraintTop_toBottomOf="@id/rv_frame" />
-
-
-                <ImageView
-                    android:id="@+id/rv_iv_star"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:contentDescription="@string/description_favorite_icon"
-                    android:elevation="1dp"
-                    android:src="@drawable/ic_baseline_white_star_outline_24"
-                    card_view:layout_constraintBottom_toBottomOf="@+id/rv_bt_favorite"
-                    card_view:layout_constraintEnd_toEndOf="@+id/rv_bt_favorite"
-                    card_view:layout_constraintStart_toStartOf="@+id/rv_bt_favorite" />
-
-                <ImageButton
-                    android:id="@+id/rv_bt_favorite"
-                    android:layout_width="125dp"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/button_open_recipe_description"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/state_overlay"
-                    card_view:layout_constraintBottom_toBottomOf="parent"
-                    card_view:layout_constraintEnd_toEndOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-</LinearLayout>
+            <ImageButton
+                android:id="@+id/recycler_view_ib_favorite"
+                android:layout_width="125dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/button_open_recipe_description"
+                android:scaleType="fitCenter"
+                android:src="@drawable/state_overlay"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

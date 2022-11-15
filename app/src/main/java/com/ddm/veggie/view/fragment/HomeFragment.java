@@ -14,10 +14,17 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ddm.veggie.DAO.ManterUsuario;
 import com.ddm.veggie.R;
 import com.ddm.veggie.adaptador.ReceitaRecyclerAdapter;
 import com.ddm.veggie.apresentador.HomeFragmentApresentador;
 import com.ddm.veggie.contrato.ContratoHome;
+import com.ddm.veggie.modelo.Receita;
+import com.ddm.veggie.modelo.ReceitaRecycler;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment implements ContratoHome.ContratoHomeView {
     private final ContratoHome.ContratoHomePresenter PRESENTER;
@@ -38,7 +45,12 @@ public class HomeFragment extends Fragment implements ContratoHome.ContratoHomeV
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PRESENTER.updateFavoriteRecipesContent();
-        withContentRecyclerViewAdapter = new ReceitaRecyclerAdapter(PRESENTER.getFavoriteRecipes());
+        List<Receita> recipes = PRESENTER.getFavoriteRecipes();
+        List<ReceitaRecycler> recipesRecycler = new ArrayList<>();
+        for (Receita recipe: recipes) {
+            recipesRecycler.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), true));
+        }
+        withContentRecyclerViewAdapter = new ReceitaRecyclerAdapter(recipesRecycler);
     }
 
     @Override
