@@ -51,7 +51,9 @@ public class ManterUsuario {
 
     public static boolean updateUsuarioName(String firebaseUserId, String name) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        Task<Void> result = db.collection("usuarios").document(firebaseUserId).update(Stream.of(new String[][] {{ "nome", name }}).collect(Collectors.toMap(data -> data[0], data -> data[1])));
+        Map<String, Object> values = new HashMap<>();
+        values.put("nome", name);
+        Task<Void> result = db.collection("usuarios").document(firebaseUserId).update(values);
         while (!result.isComplete());
         Usuario usuario = getUsuario(firebaseUserId);
         if (usuario.getNome().equals(name)) {
@@ -69,6 +71,24 @@ public class ManterUsuario {
     public static void updateUsuarioRemoveFavoriteRecipe(String firebaseUserId, String receitaId, OnCompleteListener onCompleteListener) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("usuarios").document(firebaseUserId).update("favorite_recipes", FieldValue.arrayRemove(receitaId)).addOnCompleteListener(onCompleteListener);
+    }
+
+    public static boolean usuarioContainsRecipe(String firebaseUserId, String recipeId) throws InterruptedException {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = db.collection("usuarios").document(firebaseUserId);
+        Task<DocumentSnapshot> result = documentReference.get();
+        while (!result.isComplete());
+        boolean contains = false;
+        DocumentSnapshot documentSnapshot = result.getResult();
+        if (documentSnapshot != null) {
+            for (String recipe : (ArrayList<String>) documentSnapshot.get("favorite_recipes")) {
+                if (recipe.equals(recipeId)) {
+                    contains = true;
+                    break;
+                }
+            }
+        }
+        return contains;
     }
 
     public static void deleteUsuario(String firebaseUserId, OnCompleteListener<Void> onCompleteListener) {

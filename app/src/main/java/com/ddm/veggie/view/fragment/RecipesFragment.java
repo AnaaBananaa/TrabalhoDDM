@@ -17,13 +17,20 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.ddm.veggie.DAO.ManterUsuario;
 import com.ddm.veggie.R;
 import com.ddm.veggie.adaptador.ReceitaRecyclerAdapter;
 import com.ddm.veggie.apresentador.RecipesFragmentApresentador;
 import com.ddm.veggie.contrato.ContratoRecipes;
+import com.ddm.veggie.modelo.Receita;
+import com.ddm.veggie.modelo.ReceitaRecycler;
+import com.ddm.veggie.modelo.Usuario;
 import com.ddm.veggie.view.components.FilterDialog;
+import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RecipesFragment extends Fragment implements ContratoRecipes.ContratoRecipesView, FilterDialog.FilterDialogFragmentListener {
@@ -66,20 +73,46 @@ public class RecipesFragment extends Fragment implements ContratoRecipes.Contrat
 
         //Configure Components
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(new ReceitaRecyclerAdapter(PRESENTER.getReceitas()));
+        List<Receita> recipes = PRESENTER.getReceitas();
+        List<ReceitaRecycler> recipesRecycler = new ArrayList<>();
+        for (Receita recipe: recipes) {
+            try {
+                recipesRecycler.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), ManterUsuario.usuarioContainsRecipe(FirebaseAuth.getInstance().getCurrentUser().getUid(), recipe.getFirebaseId())));
+            } catch (InterruptedException e) {
+                recipesRecycler.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), false));
+            }
+        }
+        recyclerView.setAdapter(new ReceitaRecyclerAdapter(recipesRecycler));
 
         //Actions
         btnSearch.setOnClickListener(click-> {
             PRESENTER.buscaReceitas(edSearch.getText().toString(), filters);
-            recyclerView.setAdapter(new ReceitaRecyclerAdapter(PRESENTER.getReceitas()));
+            List<Receita> recipesSearch = PRESENTER.getReceitas();
+            List<ReceitaRecycler> recipesRecyclerSearch = new ArrayList<>();
+            for (Receita recipe: recipesSearch) {
+                try {
+                    recipesRecyclerSearch.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), ManterUsuario.usuarioContainsRecipe(FirebaseAuth.getInstance().getCurrentUser().getUid(), recipe.getFirebaseId())));
+                } catch (InterruptedException e) {
+                    recipesRecyclerSearch.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), false));
+                }
+            }
+            recyclerView.setAdapter(new ReceitaRecyclerAdapter(recipesRecyclerSearch));
             edSearch.clearFocus();
             InputMethodManager in = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
             in.hideSoftInputFromWindow(edSearch.getWindowToken(), 0);
         });
         edSearch.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                PRESENTER.buscaReceitas(edSearch.getText().toString(), filters);
-                recyclerView.setAdapter(new ReceitaRecyclerAdapter(PRESENTER.getReceitas()));
+                List<Receita> recipesSearch = PRESENTER.getReceitas();
+                List<ReceitaRecycler> recipesRecyclerSearch = new ArrayList<>();
+                for (Receita recipe: recipesSearch) {
+                    try {
+                        recipesRecyclerSearch.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), ManterUsuario.usuarioContainsRecipe(FirebaseAuth.getInstance().getCurrentUser().getUid(), recipe.getFirebaseId())));
+                    } catch (InterruptedException e) {
+                        recipesRecyclerSearch.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), false));
+                    }
+                }
+                recyclerView.setAdapter(new ReceitaRecyclerAdapter(recipesRecyclerSearch));
                 edSearch.clearFocus();
                 InputMethodManager in = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                 in.hideSoftInputFromWindow(edSearch.getWindowToken(), 0);
@@ -104,6 +137,15 @@ public class RecipesFragment extends Fragment implements ContratoRecipes.Contrat
     @Override
     public void onSaveClicked() {
         PRESENTER.buscaReceitas(edSearch.getText().toString(), filters);
-        recyclerView.setAdapter(new ReceitaRecyclerAdapter(PRESENTER.getReceitas()));
+        List<Receita> recipes = PRESENTER.getReceitas();
+        List<ReceitaRecycler> recipesRecycler = new ArrayList<>();
+        for (Receita recipe: recipes) {
+            try {
+                recipesRecycler.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), ManterUsuario.usuarioContainsRecipe(FirebaseAuth.getInstance().getCurrentUser().getUid(), recipe.getFirebaseId())));
+            } catch (InterruptedException e) {
+                recipesRecycler.add(new ReceitaRecycler(recipe.getFirebaseId(), recipe.getNome(), recipe.getDescricao(), recipe.getFavoriteCount(), false));
+            }
+        }
+        recyclerView.setAdapter(new ReceitaRecyclerAdapter(recipesRecycler));
     }
 }

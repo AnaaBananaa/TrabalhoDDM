@@ -8,17 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ddm.veggie.DAO.ManterReceita;
 import com.ddm.veggie.DAO.ManterUsuario;
 import com.ddm.veggie.R;
 import com.ddm.veggie.modelo.Receita;
+import com.ddm.veggie.modelo.ReceitaRecycler;
 import com.ddm.veggie.modelo.Usuario;
 import com.ddm.veggie.view.activity.RecipeActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,34 +30,34 @@ import com.google.firebase.storage.StorageReference;
 import java.util.List;
 
 public class ReceitaRecyclerAdapter extends RecyclerView.Adapter<ReceitaRecyclerAdapter.ViewHolder> {
-    private List<Receita> receitas;
+    private List<ReceitaRecycler> receitas;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private LinearLayout mainLayout;
-        private TextView txtTitle;
-        private TextView rvTxtFavoriteCount;
-        private ImageButton btnFavorite;
-        private ImageView image;
-        private ImageView rvIvStar;
-        private ProgressBar progressBar;
+        private CardView card;
+        private ImageButton ibFavorite;
+        private ImageView ivImage;
+        private ImageView ivStar;
+        private ProgressBar pbImage;
+        private TextView tvFavoriteCount;
+        private TextView tvTitle;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mainLayout = itemView.findViewById(R.id.recipe_rv_main_layout);
-            txtTitle = itemView.findViewById(R.id.recipe_rv_txt_title);
-            rvTxtFavoriteCount = itemView.findViewById(R.id.rv_txt_favorite_count);
-            progressBar = itemView.findViewById(R.id.recipe_rv_progress_image);
-            btnFavorite = itemView.findViewById(R.id.rv_bt_favorite);
-            image = itemView.findViewById(R.id.recipe_rv_image);
-            rvIvStar = itemView.findViewById(R.id.rv_iv_star);
+            card = itemView.findViewById(R.id.recycler_view_card_layout);
+            ibFavorite = itemView.findViewById(R.id.recycler_view_ib_favorite);
+            ivImage = itemView.findViewById(R.id.recycler_view_iv_image);
+            ivStar = itemView.findViewById(R.id.recycler_view_iv_star);
+            tvFavoriteCount = itemView.findViewById(R.id.recycler_view_tv_favorite_count);
+            tvTitle = itemView.findViewById(R.id.recycler_view_tv_title);
+            pbImage = itemView.findViewById(R.id.recycler_view_pb_image);
         }
     }
 
-    public ReceitaRecyclerAdapter(List<Receita> receitas) {
+    public ReceitaRecyclerAdapter(List<ReceitaRecycler> receitas) {
         this.receitas = receitas;
     }
 
-    public void setReceitas(List<Receita> receitas) {
+    public void setReceitas(List<ReceitaRecycler> receitas) {
         this.receitas = receitas;
     }
 
@@ -70,59 +71,60 @@ public class ReceitaRecyclerAdapter extends RecyclerView.Adapter<ReceitaRecycler
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Usuario usuario = ManterUsuario.getUsuario(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        for (Receita recipe: usuario.getFavoriteRecipes()) {
-            if (recipe.getFirebaseId().equals(receitas.get(position).getFirebaseId())) {
-                holder.rvIvStar.setImageResource(R.drawable.ic_baseline_white_star_24);
-                break;
-            }
-        }
-        holder.txtTitle.setText(receitas.get(position).getNome());
-        holder.rvTxtFavoriteCount.setText("Favoritados: " + receitas.get(position).getFavoriteCount());
-        holder.progressBar.setVisibility(View.VISIBLE);
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference("recipes_images/"+receitas.get(position).getFirebaseId()+".jpg");
+        //Configure Components
+        ReceitaRecycler currentRecipe = receitas.get(position);
+        holder.tvTitle.setText(currentRecipe.getNome());
+        holder.ivImage.setImageResource(R.color.transparent);
+        holder.pbImage.setVisibility(View.VISIBLE);
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference("recipes_images/"+currentRecipe.getFirebaseId()+".jpg");
         storageReference.getBytes(1024 * 1024).addOnSuccessListener((OnSuccessListener<byte[]>) bytes -> {
             Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-            holder.image.setImageBitmap(bmp);
-            holder.progressBar.setVisibility(View.GONE);
+            holder.ivImage.setImageBitmap(bmp);
+            holder.pbImage.setVisibility(View.GONE);
         });
-        holder.mainLayout.setOnClickListener(click -> {
+        holder.tvFavoriteCount.setText("Favoritados: " + currentRecipe.getFavoriteCount());
+        if (currentRecipe.isFavorited()) {
+            holder.ivStar.setImageResource(R.drawable.ic_baseline_white_star_24);
+        } else {
+            holder.ivStar.setImageResource(R.drawable.ic_baseline_white_star_outline_24);
+        }
+
+        //Actions
+        holder.card.setOnClickListener(click -> {
             Intent intent = new Intent(holder.itemView.getContext(), RecipeActivity.class);
-            intent.putExtra("recipeId", receitas.get(position).getFirebaseId());
+            Receita recipe = ManterReceita.getReceita(currentRecipe.getFirebaseId());
+            intent.putExtra("firebaseId", recipe.getFirebaseId());
+            intent.putExtra("name", recipe.getNome());
+            intent.putExtra("descricao", recipe.getDescricao());
+            intent.putExtra("favoriteCount", recipe.getFavoriteCount());
+            intent.putExtra("isFavorited", currentRecipe.isFavorited());
             holder.itemView.getContext().startActivity(intent);
         });
-        holder.btnFavorite.setOnClickListener(click -> {
-            boolean userContaisRecipe = false;
-            Usuario user = ManterUsuario.getUsuario(FirebaseAuth.getInstance().getCurrentUser().getUid());
-            for (Receita recipe: user.getFavoriteRecipes()) {
-                if (recipe.getFirebaseId().equals(receitas.get(position).getFirebaseId())) {
-                    userContaisRecipe = true;
-                    break;
-                }
-            }
-            if (userContaisRecipe) {
-                ManterUsuario.updateUsuarioRemoveFavoriteRecipe(user.getFirebaseUserId(), receitas.get(position).getFirebaseId(), onCompleteListenerUser -> {
+
+        holder.ibFavorite.setOnClickListener(click -> {
+            if (currentRecipe.isFavorited()) {
+                ManterUsuario.updateUsuarioRemoveFavoriteRecipe(FirebaseAuth.getInstance().getCurrentUser().getUid(), currentRecipe.getFirebaseId(), onCompleteListenerUser -> {
                     if(onCompleteListenerUser.isSuccessful()) {
-                        ManterReceita.updateReceitaDecreaseFavoriteCount(receitas.get(position).getFirebaseId(), onCompleteListenerRecipe -> {
+                        ManterReceita.updateReceitaDecreaseFavoriteCount(currentRecipe.getFirebaseId(), onCompleteListenerRecipe -> {
                             if (onCompleteListenerRecipe.isSuccessful()) {
-                                holder.rvIvStar.setImageResource(R.drawable.ic_baseline_white_star_outline_24);
-                                holder.rvTxtFavoriteCount.setText("Favoritados: " + ManterReceita.getReceita(receitas.get(position).getFirebaseId()).getFavoriteCount());
+                                holder.ivStar.setImageResource(R.drawable.ic_baseline_white_star_outline_24);
                             }
                         });
                     }
                 });
             } else {
-                ManterUsuario.updateUsuarioAddFavoriteRecipe(user.getFirebaseUserId(), receitas.get(position).getFirebaseId(), onCompleteListenerUser -> {
+                ManterUsuario.updateUsuarioAddFavoriteRecipe(FirebaseAuth.getInstance().getCurrentUser().getUid(), currentRecipe.getFirebaseId(), onCompleteListenerUser -> {
                     if(onCompleteListenerUser.isSuccessful()) {
-                        ManterReceita.updateReceitaIncreaseFavoriteCount(receitas.get(position).getFirebaseId(), onCompleteListenerRecipe -> {
+                        ManterReceita.updateReceitaIncreaseFavoriteCount(currentRecipe.getFirebaseId(), onCompleteListenerRecipe -> {
                             if (onCompleteListenerRecipe.isSuccessful()) {
-                                holder.rvIvStar.setImageResource(R.drawable.ic_baseline_white_star_24);
-                                holder.rvTxtFavoriteCount.setText("Favoritados: " + ManterReceita.getReceita(receitas.get(position).getFirebaseId()).getFavoriteCount());
+                                holder.ivStar.setImageResource(R.drawable.ic_baseline_white_star_24);
                             }
                         });
                     }
                 });
             }
+            currentRecipe.setIsFavorited(!currentRecipe.isFavorited());
+            holder.tvFavoriteCount.setText("Favoritados: " + ManterReceita.getReceita(currentRecipe.getFirebaseId()).getFavoriteCount());
         });
     }
 
