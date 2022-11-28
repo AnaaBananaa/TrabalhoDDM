@@ -46,7 +46,7 @@ public class ManterReceita {
                 String[] words = nomeDocument.toLowerCase().split(" ");
                 for (String word : words) {
                     if (word.length() >= nome.length() && word.substring(0, nome.length()).equals(nome.toLowerCase())) {
-                        receitas.add(new Receita(document.getId(), nomeDocument, document.getString("descricao"), Integer.parseInt(document.getString("favorite_count"))));
+                        receitas.add(new Receita(document.getId(), nomeDocument, document.getString("descricao"), document.get("favorite_count", Integer.class)));
                         break;
                     }
                 }

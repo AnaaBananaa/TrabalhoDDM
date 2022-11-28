@@ -107,7 +107,9 @@ public class ReceitaRecyclerAdapter extends RecyclerView.Adapter<ReceitaRecycler
                     if(onCompleteListenerUser.isSuccessful()) {
                         ManterReceita.updateReceitaDecreaseFavoriteCount(currentRecipe.getFirebaseId(), onCompleteListenerRecipe -> {
                             if (onCompleteListenerRecipe.isSuccessful()) {
+                                currentRecipe.setIsFavorited(!currentRecipe.isFavorited());
                                 holder.ivStar.setImageResource(R.drawable.ic_baseline_white_star_outline_24);
+                                holder.tvFavoriteCount.setText("Favoritados: " + ManterReceita.getReceita(currentRecipe.getFirebaseId()).getFavoriteCount());
                             }
                         });
                     }
@@ -117,14 +119,14 @@ public class ReceitaRecyclerAdapter extends RecyclerView.Adapter<ReceitaRecycler
                     if(onCompleteListenerUser.isSuccessful()) {
                         ManterReceita.updateReceitaIncreaseFavoriteCount(currentRecipe.getFirebaseId(), onCompleteListenerRecipe -> {
                             if (onCompleteListenerRecipe.isSuccessful()) {
+                                currentRecipe.setIsFavorited(!currentRecipe.isFavorited());
                                 holder.ivStar.setImageResource(R.drawable.ic_baseline_white_star_24);
+                                holder.tvFavoriteCount.setText("Favoritados: " + ManterReceita.getReceita(currentRecipe.getFirebaseId()).getFavoriteCount());
                             }
                         });
                     }
                 });
             }
-            currentRecipe.setIsFavorited(!currentRecipe.isFavorited());
-            holder.tvFavoriteCount.setText("Favoritados: " + ManterReceita.getReceita(currentRecipe.getFirebaseId()).getFavoriteCount());
         });
     }
 

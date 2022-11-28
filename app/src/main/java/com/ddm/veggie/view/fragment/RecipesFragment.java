@@ -103,6 +103,7 @@ public class RecipesFragment extends Fragment implements ContratoRecipes.Contrat
         });
         edSearch.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                PRESENTER.buscaReceitas(edSearch.getText().toString(), filters);
                 List<Receita> recipesSearch = PRESENTER.getReceitas();
                 List<ReceitaRecycler> recipesRecyclerSearch = new ArrayList<>();
                 for (Receita recipe: recipesSearch) {
